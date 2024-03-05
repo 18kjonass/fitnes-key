@@ -12,7 +12,7 @@ ref = ref.child('users/'+name)
 
 ser = serial.Serial()
 ser.baudrate = 115200
-ser.port = "COM6"
+ser.port = "COM4"
 ser.timeout = 0.002
 ser.bytesize = 8
 ser.stopbits = 1
