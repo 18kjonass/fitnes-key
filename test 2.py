@@ -16,10 +16,42 @@ ref = ref.child('users/'+ user_name)
 result = ref.get()
 print(type(result))
 
-x = []
-y = []
+x1 = []
+y1 = []
+
+x2 = []
+y2 = []
+
+x3 = []
+y3 = []
 
 
+for key, value in result.items():
+   #print(value)
+    timestamp_string = key
+    dt_obj = datetime.fromtimestamp(int(timestamp_string))
+    print("date_time:",dt_obj.strftime('%m-%d'))
+    
+    x1.append(dt_obj.strftime('%m-%d'))
+    y1.append(int(value['steps']))
+    
+    plt.subplot(3, 1, 1)
+    plt.plot(x1,y1)
+    plt.title("Step Counter")
+   
+'''
+  
+for key, value in result.items():
+   #print(value)
+    timestamp_string = key
+    dt_obj = datetime.fromtimestamp(int(timestamp_string))
+    print("date_time:",dt_obj)
+    
+    x2.append(dt_obj)
+    y2.append(int(value['distance']))
+    
+    plt.subplot(3, 1, 2)
+    plt.plot(x2,y2)
 
 for key, value in result.items():
    #print(value)
@@ -27,8 +59,14 @@ for key, value in result.items():
     dt_obj = datetime.fromtimestamp(int(timestamp_string))
     print("date_time:",dt_obj)
     
-    x.append(dt_obj)
-    y.append(int(value['distance']))
+    x3.append(str(dt_obj.time()))
+    y3.append(int(value['steps']))
+    
+    plt.subplot(3, 1, 3)
+    plt.plot(x3,y3)
+'''
+
+plt.show()
 
 '''
     print("type of dt:",type(dt_obj))
@@ -40,10 +78,28 @@ for key, value in result.items():
 
 
 
-
+'''
 # plot
 fig, ax = plt.subplots()
+fig, bx = plt.subplots()
+fig, cx = plt.subplots()
 
-ax.plot(x, y, linewidth=2.0)
+plt.title("Step Counter")
+
+plt.x1label("Dates")
+plt.y1label("Steps")
+
+plt.x2label("Dates")
+plt.y2label("Distance")
+
+plt.x3label("Time")
+plt.y3label("Steps")
+
+
+
+ax.plot(x1, y1, linewidth=2.0)
+bx.plot(x2, y2, linewidth=2.0)
+cx.plot(x3, y3, linewidth=2.0)
 
 plt.show()
+'''
