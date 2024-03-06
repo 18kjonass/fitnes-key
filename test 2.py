@@ -26,6 +26,8 @@ x3 = []
 y3 = []
 
 
+
+
 for key, value in result.items():
    #print(value)
     timestamp_string = key
@@ -35,39 +37,60 @@ for key, value in result.items():
     x1.append(dt_obj.strftime('%m-%d'))
     y1.append(int(value['steps']))
     
-    plt.subplot(3, 1, 1)
     plt.plot(x1,y1)
-    plt.title("Step Counter")
-   
-'''
-  
-for key, value in result.items():
-   #print(value)
-    timestamp_string = key
-    dt_obj = datetime.fromtimestamp(int(timestamp_string))
-    print("date_time:",dt_obj)
+    plt.title("Steps")
     
-    x2.append(dt_obj)
-    y2.append(int(value['distance']))
-    
-    plt.subplot(3, 1, 2)
-    plt.plot(x2,y2)
-
-for key, value in result.items():
-   #print(value)
-    timestamp_string = key
-    dt_obj = datetime.fromtimestamp(int(timestamp_string))
-    print("date_time:",dt_obj)
-    
-    x3.append(str(dt_obj.time()))
-    y3.append(int(value['steps']))
-    
-    plt.subplot(3, 1, 3)
-    plt.plot(x3,y3)
-'''
-
+plt.suptitle("Step Counter")
 plt.show()
+    
+user_input = int(input("do you want to see your distance travel if yes press 1.if you want time press 2 and if both press 3"))
 
+for key, value in result.items():
+    if user_input == 1:
+        timestamp_string = key
+        dt_obj = datetime.fromtimestamp(int(timestamp_string))
+        print("date_time:",dt_obj.strftime('%m-%d'))
+            
+        x2.append(dt_obj.strftime('%m-%d'))
+        y2.append(int(value['distance']))
+            
+        plt.plot(x2,y2)
+        plt.title("Distance")
+    elif user_input == 2:
+        timestamp_string = key
+        dt_obj = datetime.fromtimestamp(int(timestamp_string))
+        print("date_time:",dt_obj)
+            
+        x3.append(str(dt_obj.time()))
+        y3.append(int(value['steps']))
+            
+        plt.plot(x3,y3)
+        plt.title("Time")
+    elif user_input == 3:
+        timestamp_string = key
+        dt_obj = datetime.fromtimestamp(int(timestamp_string))
+        print("date_time:",dt_obj.strftime('%m-%d'))
+            
+        x2.append(dt_obj.strftime('%m-%d'))
+        y2.append(int(value['distance']))
+            
+        plt.subplot(2, 1, 1)
+        plt.plot(x2,y2)
+        plt.title("Distance")
+        
+        dt_obj = datetime.fromtimestamp(int(timestamp_string))
+        print("date_time:",dt_obj)
+            
+        x3.append(str(dt_obj.time()))
+        y3.append(int(value['steps']))
+            
+        plt.subplot(2, 1, 2)
+        plt.plot(x3,y3)
+        plt.title("Time")
+    
+        
+plt.suptitle("Step Counter")
+plt.show()
 '''
     print("type of dt:",type(dt_obj))
     print(timestamp_string)
