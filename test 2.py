@@ -25,7 +25,9 @@ y2 = []
 x3 = []
 y3 = []
 
-
+'''
+u need now to set goals for yours asking steps and if they need more or less
+'''
 
 
 for key, value in result.items():
