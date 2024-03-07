@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 #import datetime
 from datetime import datetime,timedelta
 
-cred = credentials.Certificate("C:/Users/karin/Downloads/fitnes-key-main/computer-science-fitnes-firebase-adminsdk-lm0a4-65b841b747.json")
+cred = credentials.Certificate("C:/Users/18KJonass.ACC/Downloads/fitnes-key-main (1)/fitnes-key-main/computer-science-fitnes-firebase-adminsdk-lm0a4-65b841b747.json")
 firebase_admin.initialize_app(cred,{'databaseURL': 'https://computer-science-fitnes-default-rtdb.europe-west1.firebasedatabase.app/'})
 user_name = input('enter your name')
 ref = db.reference('/')
@@ -51,7 +51,7 @@ avgsteps = avgsteps/count
 #gets the individualtimes and sorts them
 for i in range(0,timecount-1,2):
     individualtimes.append(int(Dtime[i+1])-int(Dtime[i]))
-    individualtimes.sort()
+
    
 '''
 avgtime = avgtime + individualtimes[seconds]
@@ -74,7 +74,7 @@ if user_input == 1:
     plt.plot(x,y2)
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))  
 elif user_input == 2: 
-    plt.plot(x,timehms)
+    plt.plot(x,((individualtimes/1000)/60))
     plt.title("Time")
 elif user_input == 3:
     plt.subplot(2, 1, 1)
