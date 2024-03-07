@@ -33,10 +33,11 @@ timehms = []
 avgtime = 0
 
 for key, value in result.items():
+  #puts the times in a list
     Dtime.append(key)
     timestamp_string = key
     dt_obj = datetime.fromtimestamp(int(timestamp_string))
-    
+    #cheaks if the key is a start or end time and adds the values to a list
     if int(value['steps']) > 0 :
         x.append(dt_obj.strftime('%m-%d'))
         y1.append(int(value['steps']))
@@ -47,6 +48,7 @@ for key, value in result.items():
 
 timecount = len(Dtime)
 avgsteps = avgsteps/count
+#gets the individualtimes and sorts them
 for i in range(0,timecount-1,2):
     individualtimes.append(int(Dtime[i+1])-int(Dtime[i]))
     individualtimes.sort()
@@ -56,7 +58,7 @@ avgtime = avgtime + individualtimes[seconds]
 avgtime = avgtime/timecount
 print(avgtime)
 '''           
-
+#puts the keys to times
 for seconds in individualtimes:
     timehms.append(str(timedelta(seconds=seconds)))
             
@@ -67,7 +69,7 @@ plt.suptitle("Step Counter")
 plt.show()
     
 user_input = int(input("do you want to see your distance travel if yes press 1.if you want time press 2 and if both press 3"))
-
+#cheacks if they want to display time or distance or both
 if user_input == 1:
     plt.plot(x,y2)
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))  
