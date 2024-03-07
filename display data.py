@@ -51,7 +51,9 @@ avgsteps = avgsteps/count
 #gets the individualtimes and sorts them
 for i in range(0,timecount-1,2):
     individualtimes.append(int(Dtime[i+1])-int(Dtime[i]))
+print(individualtimes)
 
+individualtimes = [60,180,120,600] 
    
 '''
 avgtime = avgtime + individualtimes[seconds]
@@ -59,8 +61,16 @@ avgtime = avgtime/timecount
 print(avgtime)
 '''           
 #puts the keys to times
+realtime = []
+m = 0
+while m < len(individualtimes):
+    realtime.append((int(individualtimes[m])/60))
+    print(realtime)
+    m += 1
 for seconds in individualtimes:
     timehms.append(str(timedelta(seconds=seconds)))
+
+ 
             
 
 plt.plot(x,y1)
@@ -74,7 +84,7 @@ if user_input == 1:
     plt.plot(x,y2)
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))  
 elif user_input == 2: 
-    plt.plot(x,((individualtimes/1000)/60))
+    plt.plot(x,realtimeb)
     plt.title("Time")
 elif user_input == 3:
     plt.subplot(2, 1, 1)
@@ -82,7 +92,7 @@ elif user_input == 3:
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))
      
     plt.subplot(2, 1, 2)
-    plt.plot(x,timehms)
+    plt.plot(x,individualtimes)
     plt.title("Time")
       
 plt.show()
