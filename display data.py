@@ -4,7 +4,6 @@ import serial
 from firebase_admin import credentials
 from firebase_admin import db
 import matplotlib.pyplot as plt
-#import datetime
 from datetime import datetime,timedelta
 
 cred = credentials.Certificate("C:/Users/18KJonass.ACC/Downloads/fitnes-key-main (1)/fitnes-key-main/computer-science-fitnes-firebase-adminsdk-lm0a4-65b841b747.json")
@@ -18,7 +17,6 @@ result = ref.get()
 x = []
 y1 = []
 y2 = []
-
 
 '''
 u need now to set goals for yours asking steps and if they need more or less
@@ -51,27 +49,15 @@ avgsteps = avgsteps/count
 #gets the individualtimes and sorts them
 for i in range(0,timecount-1,2):
     individualtimes.append(int(Dtime[i+1])-int(Dtime[i]))
-print(individualtimes)
-
-individualtimes = [60,180,120,600] 
-   
-'''
-avgtime = avgtime + individualtimes[seconds]
-avgtime = avgtime/timecount
-print(avgtime)
-'''           
+    print(individualtimes)
+        
 #puts the keys to times
 realtime = []
 m = 0
 while m < len(individualtimes):
     realtime.append((int(individualtimes[m])/60))
-    print(realtime)
     m += 1
-for seconds in individualtimes:
-    timehms.append(str(timedelta(seconds=seconds)))
-
- 
-            
+print(realtime)
 
 plt.plot(x,y1)
 plt.title("Steps " + str(round(avgsteps)))   
@@ -84,7 +70,7 @@ if user_input == 1:
     plt.plot(x,y2)
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))  
 elif user_input == 2: 
-    plt.plot(x,realtimeb)
+    plt.bar(x,realtime)
     plt.title("Time")
 elif user_input == 3:
     plt.subplot(2, 1, 1)
@@ -92,11 +78,7 @@ elif user_input == 3:
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))
      
     plt.subplot(2, 1, 2)
-    plt.plot(x,individualtimes)
+    plt.bar(x,realtime)
     plt.title("Time")
       
 plt.show()
-
-
-
-
