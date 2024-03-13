@@ -18,9 +18,7 @@ x = []
 y1 = []
 y2 = []
 
-'''
-u need now to set goals for yours asking steps and if they need more or less
-'''
+
 
 avgsteps = 0
 avgdistance = 0
@@ -29,6 +27,13 @@ Dtime = []
 individualtimes = []
 timehms = []
 avgtime = 0
+
+age = input("what is your age ?")
+
+agesteps = 0
+
+if age > 18:
+    
 
 for key, value in result.items():
   #puts the times in a list
@@ -39,7 +44,7 @@ for key, value in result.items():
     if int(value['steps']) > 0 :
         x.append(dt_obj.strftime('%m-%d'))
         y1.append(int(value['steps']))
-        y2.append(int(value['distance']))
+        y2.append((int(value['distance'])/100))
         avgdistance = avgdistance + int(value['distance'])
         avgsteps = avgsteps + int(value['steps']) 
         count += 1
@@ -49,36 +54,42 @@ avgsteps = avgsteps/count
 #gets the individualtimes and sorts them
 for i in range(0,timecount-1,2):
     individualtimes.append(int(Dtime[i+1])-int(Dtime[i]))
-    print(individualtimes)
-        
+
+t = 0
+avgtime = 0
+while t < len(individualtimes):
+    avgtime = avgtime + individualtimes[t]
+    t += 1   
+    
 #puts the keys to times
 realtime = []
 m = 0
+minute = []
 while m < len(individualtimes):
     realtime.append((int(individualtimes[m])/60))
+    minute.append(round(realtime[m],3))
     m += 1
-print(realtime)
 
 plt.plot(x,y1)
 plt.title("Steps " + str(round(avgsteps)))   
 plt.suptitle("Step Counter")
 plt.show()
     
-user_input = int(input("do you want to see your distance travel if yes press 1.if you want time press 2 and if both press 3"))
+user_input = int(input("if you want to see your average distance travel press 1. if you want to see your average time press 2. if you want to see both press 3"))
 #cheacks if they want to display time or distance or both
 if user_input == 1:
     plt.plot(x,y2)
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))  
 elif user_input == 2: 
-    plt.bar(x,realtime)
-    plt.title("Time")
+    plt.bar(x,minute)
+    plt.title("Time" + str(round((avgtime/len(individualtimes))/60,3)))
 elif user_input == 3:
     plt.subplot(2, 1, 1)
     plt.plot(x,y2)
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))
      
     plt.subplot(2, 1, 2)
-    plt.bar(x,realtime)
-    plt.title("Time")
+    plt.bar(x,minute)
+    plt.title("Time" + str(round((avgtime/len(individualtimes))/60,3)))
       
 plt.show()
