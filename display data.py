@@ -14,9 +14,9 @@ ref = ref.child('users/'+ user_name)
   
 result = ref.get()
 
-x = []
-y1 = []
-y2 = []
+date = []
+steps = []
+distance = []
 
 
 
@@ -28,13 +28,6 @@ individualtimes = []
 timehms = []
 avgtime = 0
 
-age = input("what is your age ?")
-
-agesteps = 0
-
-if age > 18:
-    
-
 for key, value in result.items():
   #puts the times in a list
     Dtime.append(key)
@@ -42,9 +35,9 @@ for key, value in result.items():
     dt_obj = datetime.fromtimestamp(int(timestamp_string))
     #cheaks if the key is a start or end time and adds the values to a list
     if int(value['steps']) > 0 :
-        x.append(dt_obj.strftime('%m-%d'))
-        y1.append(int(value['steps']))
-        y2.append((int(value['distance'])/100))
+        date.append(dt_obj.strftime('%m-%d'))
+        steps.append(int(value['steps']))
+        distance.append((int(value['distance'])/100))
         avgdistance = avgdistance + int(value['distance'])
         avgsteps = avgsteps + int(value['steps']) 
         count += 1
@@ -69,27 +62,71 @@ while m < len(individualtimes):
     realtime.append((int(individualtimes[m])/60))
     minute.append(round(realtime[m],3))
     m += 1
+    
+age = int(input("what is your age ?"))
 
-plt.plot(x,y1)
+
+
+if age < 18:
+    if 6000 > round(avgsteps):
+        if 6000 > steps[-1]:
+            print("The model indicates you are under preforming in your average daily steps and need to put in more steps for your age.\nAt this rate you will only average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nOver all your physical wellbeing will suffer. if you were to do more steps you will begin to see an improvment.")
+        elif 6000 <= steps[-1]:
+            print("The model indicates that your average steps is under preforming but if you keep going as your going incressing your steps you will reach " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nOver all your physical wellbeing is suffering but you are impoving. If you were to do more steps you will begin to see an improvment.")
+    elif 6000 < round(avgsteps):
+        if 6000 > steps[-1]:
+            print("The model indicates you are doing very well in your steps but your are slowly droping this maybe that you may need a break if you keep going like this you will reach on average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nYou are doing physical well but may need a few days of rest to improve your wellbeing.")
+        elif 6000 <= steps[-1]:
+            print("The model indicates you are doing very well and if you keep going like this you average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nYou are doing physical well and if you keep this up you will end up doing a lot better keep it up.")
+
+elif age >= 18 and age < 65:    
+    if 10000 > round(avgsteps):
+        if 10000 > steps[-1]:
+            print("The model indicates you are under preforming in your average daily steps and need to put in more steps for your age.\nAt this rate you will only average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nOver all your physical wellbeing will suffer. if you were to do more steps you will begin to see an improvment.")
+        elif 10000 <= steps[-1]:
+            print("The model indicates that your average steps is under preforming but if you keep going as your going incressing your steps you will reach " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nOver all your physical wellbeing is suffering but you are impoving. If you were to do more steps you will begin to see an improvment.")
+    elif 10000 < round(avgsteps):
+        if 10000 > steps[-1]:
+            print("The model indicates you are doing very well in your steps but your are slowly droping this maybe that you may need a break if you keep going like this you will reach on average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nYou are doing physical well but may need a few days of rest to improve your wellbeing.")
+        elif 10000 <= steps[-1]:
+            print("The model indicates you are doing very well and if you keep going like this you average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nYou are doing physical well and if you keep this up you will end up doing a lot better keep it up.")
+
+elif age >= 65:
+    
+    if 3000 > round(avgsteps):
+        if 3000 > steps[-1]:
+            print("The model indicates you are under preforming in your average daily steps and need to put in more steps for your age.\nAt this rate you will only average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nOver all your physical wellbeing will suffer. if you were to do more steps you will begin to see an improvment.")
+        elif 3000 <= steps[-1]:
+            print("The model indicates that your average steps is under preforming but if you keep going as your going incressing your steps you will reach " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nOver all your physical wellbeing is suffering but you are impoving. If you were to do more steps you will begin to see an improvment.")
+    elif 3000 < round(avgsteps):
+        if 3000 > steps[-1]:
+            print("The model indicates you are doing very well in your steps but your are slowly droping this maybe that you may need a break if you keep going like this you will reach on average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nYou are doing physical well but may need a few days of rest to improve your wellbeing.")
+        elif 3000 <= steps[-1]:
+            print("The model indicates you are doing very well and if you keep going like this you average " + str(round(((round(avgsteps))+(steps[-1]*30)/count)/30)) + " in the next 30 days.\nYou are doing physical well and if you keep this up you will end up doing a lot better keep it up.")
+    
+plt.plot(date,steps)
 plt.title("Steps " + str(round(avgsteps)))   
 plt.suptitle("Step Counter")
 plt.show()
     
-user_input = int(input("if you want to see your average distance travel press 1. if you want to see your average time press 2. if you want to see both press 3"))
+user_input = int(input("If you want to see your average distance travel press 1.\nIf you want to see your average time press 2.\nIf you want to see both press 3."))
 #cheacks if they want to display time or distance or both
 if user_input == 1:
-    plt.plot(x,y2)
-    plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))  
+    plt.plot(date,distance)
+    plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))
+    print("The model indicatesif you want to want to incress your distance travel it would be reocmmended to run a set time like 1 hour and try to run as far as you can.\nYour average distance is " + str(round(((avgdistance/count)/100), 2)) +" meters which can always improve if you go out everyday and try to run more than the average which will improve your physical wellbeing.")
 elif user_input == 2: 
-    plt.bar(x,minute)
-    plt.title("Time" + str(round((avgtime/len(individualtimes))/60,3)))
+    plt.bar(date,minute)
+    plt.title("Time " + str(round((avgtime/len(individualtimes))/60,3)))
+    print("The model indicates if you want to want to decress your time travel it would be reocmmended to run a set distance like 1 km and try to run as fast as you can.\nYour average time is " + str(round((avgtime/len(individualtimes))/60,3)) +" minutes which can always improve if you go out everyday and try to run less than the average which will improve your physical wellbeing.")
 elif user_input == 3:
     plt.subplot(2, 1, 1)
-    plt.plot(x,y2)
+    plt.plot(date,distance)
     plt.title("Distance " + str(round(((avgdistance/count)/100), 2)))
      
     plt.subplot(2, 1, 2)
-    plt.bar(x,minute)
-    plt.title("Time" + str(round((avgtime/len(individualtimes))/60,3)))
+    plt.bar(date,minute)
+    plt.title("Time " + str(round((avgtime/len(individualtimes))/60,3)))
+    print("The model indicates this is where you compare the 2 data sets to see if your improveing.\nIf you want distance try to keep the time chart as equal as possible but if your trying to improve time try to keep the distance chat as stright as possible to get good results.\nYou should see a great impovement over a large peroid of time in your physical wellbeing.")
       
 plt.show()
