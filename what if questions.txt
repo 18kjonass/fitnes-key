@@ -1,9 +1,0 @@
-1: What if the user wants to know how many calories they need to consume to maintain a healthy BMI?
-
-How this affects their wellbeing: Knowing how many calories they need to eat can help the user remain healthy.
-
-
-2: What if the user wants to know how they compare to the average person their sex and age in regards to activity?
-
-
-How this affects their wellbeing: If the user knows how they compare to others their age, they can learn from it and increase/decrase their steps as needed to improve their wellbeing
