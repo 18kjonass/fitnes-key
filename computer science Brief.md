@@ -45,8 +45,12 @@
     - i get the users stride, distance and time and then graph the information and then give futer incite on there phyisical wellbeing 
 
 ## technologies used 
-- i used micro bit as my physical device and used a range of programs form block code for the micro bit, python for the graphs, firebase for thet data base and html to do the write up 
-
+- the micro bit serves as the physical device for data collection during runs
+- block code was used to program the micro bit's functionalities
+- i employed Python for data analysis and graphing
+- firebase was used as the database for storing user data
+- i utilized HTML for project documentation and presentation purposes
+- 
 ## detailed flowchart
 
 ## architecture flowchart
@@ -99,7 +103,7 @@
 - another problem was trying to find the best way to give feed back to the user given the data.  
 
 ## important piece of code
-
+- the most inmportant pecie of code to me is that this key vaule check. without this code i would not be able to sort my data and display it properly.
 
 # evaluation 
-- i would say that te project i did could have been a lot better i dound have put all the graphs into 
+- i would say that the project i did could have a lot of improvents to work on. the device maybe did not need a secound micro bit but intsead need one button to have asecond function to make time. my could is all over the place and could be a lot bettre if i used functions and made better use of the data diplay by instead of have it on python try to display on chartJS witch has more opions and makes it look a lot nicer. for the write up i would say that i could have gave a lot more detail instead of having everthing shorten down for the reader and made the write up easyer to read.
