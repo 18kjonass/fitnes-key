@@ -53,7 +53,7 @@
     - i get the users stride, distance and time and then graph the information and then give futer incite on there wellbeing 
 
 ## Technologies Used 
-- 
+- i used micro bit as my physical device and used a range of programs form block code for the micro bit, python for the graphs, firebase for thet data base and html to do the write up 
 
 ## Detailed Flowchart
 
@@ -63,84 +63,49 @@
 ## Dates
 
 - **Week 1:**
-    - i worked on investigation of the project 
+    - i worked on the investigation part of the project 
+    - i carried out a surrvey 
+    - i tryed to find out what i need for the project
 
 - **Week 2:**
-    - Worked on plan and design:
-        - Listed technologies I will use based on survey results
-        - Created architecture diagram and flowchart, will likely have small changes made later
-    
-    - Worked on the serial reader:
-        - Made the program read data recieved from the serial port and write it to an SQLite database
-
-    - Created basic draft of microbit step counter code:
-        - The program simply counted steps using the accelerometer and sent them on button press
+    - i worked on plan and design
+    - i gathered the pecies of tecnolgy i need like the micro bit
+    - i started to make my flow chart and plan on how i am going to program it
 
 - **Week 3:**
-    - Worked on investigation:
-        - Added the source for my formula to calculate calories lost to my investigation
-        - Added anything relating weight and calories lost to write-up
-        - Wrote up draft of 'what-if' questions
-    - Added to plan and design:
-        - Added a system summary, which sumamrises what my project and each program involved does
-    - Made some changes to serial reader code, such as automatic port finding and many bug fixes 
+    - i made the code for my formula to calculate height and to get my inputs from the micro bit
 
 - **Week 4:**
-    - Made changes to serial reader;
-        - Changed format of database to not include a primary key as it is unnecesarry for this program
-    - Made the layout of the HTML document
-    - Created config for ChartJS, in preperation for graphing
-    - Made small wording changes to flowchart
+    - i made the program to write to the data base useing the micro bits
 
 - **Week 5:**
-    - I took a break in preperation for my mock exams next week
+    - i  made the micro bit write out what i need to write to the data base like stride, height, steps, distance and time
 
 - **Week 6:**
-    - I had my mock exams this week
-
+    - i did nothing because of the mocks 
 - **Week 7:**
-    - Added venv, which stores all required modules locally, this is removed later due to issues that took too long to solve
-    - Fixed up HTML layout
-    - Added to serial reader
-        - Implemented data validation, the data won't upload if it's not a number or if it's 0
-    - Fixed microbit step counter code
-        - Fixed issue where microbit would count multiple steps in one movement
+    - i made it so that the python can read from the fire base and to display some data 
 
 - **Week 8:**
-    - Added some basic CSS styling to the page
-    - Attempted to make venv work
-    - Removed venv in favor of downloading the required modules through the batch script, this will work assuming the user has python installed and is running windows
+    - i made it so that i can graph the data i need like time,steps and distance
 
 - **Week 9:**
-    - Fixed an error in my stride calculation
-    - Made ChartJS update the graph dynamically when a value is inputted
-    - Added a function to calculate calories lost using the user's height, weight and steps
-    - Added a function to advise the user on their step count and how it compares to others their sex and age
+    - i made the time shows in minutes and made the formaula to calculate the avevrge steps,time and distance
 
 - **Week 10:**
-    - Added a user system, which takes a username from the batch file when ran and writes/reads to/from that user's table in the database
-    - Modified HTML layout to fit all inputs on the top of the screen
-    - Worked on CSS
-        - Made the graph zoomed in and scrollable to account for the readability large datasets
-        - Added color to make the graphs more readable for the user
-        - Made the label of the graph appear even if the user isn't hovering over the bar itself
-        - Made the empty graphs hidden until data is found in them 
+    - i made the graphs to look cleaner and more readable and put in the time to do unit testing on my programs
 
 - **Week 11:**
-    - Finishing touches to the CSS, such as colors and margins
-    - Added a function to uncheck the other checkbox when a checkbox is selected
-    - Fixed up the formatting of some javascript functions
-    - Added a background gradient
-    - Changed some input placeholders to be more clear, aswell as some text
-    - Reworked my age group function as I thought of a more efficient way to write it
-    - Fixed a bug with calorie function that would return NaN
-    - Reworded my 'what-if' questions to be more clear
+    - i made the user got proper feed back on their wellbeing and built the age range i needed to give the feed back
     
 - **Week 12:**
-    - Recorded my video, I left this for last in case I made any changes and had to record it again
-    - Finalised my write-up and my code
+    - i recorded my video whitch was edited to fit the 5 minute frame 
+    - i put all my write up into the html and layed it out
 
-## One Encountered Problem
+## Problem encountered 
 
 
 ## Important piece of code
+
+# Evaluation 
+- i would say that te project i did could have been a lot better i dound have put all the graphs into 
