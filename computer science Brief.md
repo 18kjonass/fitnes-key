@@ -84,10 +84,10 @@
     - i made refinements such as displaying time in minutes and calculating average steps, time, and distance. this         involved fine tuning algorithms, optimizing code performance, and addressing user feedback to                         enhance the overall user experience.
 
 - **week 10:**
-    - i madImproving the visual presentation of graphs and performing unit testing on programs ensures the project's quality and reliability. This step involves refining graphical elements, adjusting layout and formatting, and systematically testing software components to identify and resolve bugs or errors.
+    - i improved the visual presentation of graphs and performed unit testing on the programs to ensures the project's quality and reliability. This step involved adjusting layout and formatting and systematically testing software to identify and resolve bugs or errors.
 
 - **week 11:**
-    -Implementing a user feedback system for wellbeing assessment and establishing age ranges for feedback demonstrates a user-centered design approach. This involves understanding user needs and preferences, designing intuitive interfaces, and incorporating mechanisms for user feedback and engagement.
+    - i implemented a user feedback system for wellbeing assessment and establishing age ranges for feedback . This involved understanding user needs and preferences,  and incorporating mechanisms for user feedback.
     
 - **week 12:**
     - Recording and editing a video presentation to fit within a five-minute timeframe requires effective communication skills and multimedia editing expertise. This involves scripting content, recording video footage, editing footage for clarity and conciseness, and ensuring that the final presentation effectively conveys the project's key highlights.
