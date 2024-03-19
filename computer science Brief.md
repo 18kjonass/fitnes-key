@@ -9,15 +9,14 @@
     - I found out that over 70% dont do any active sport.
     - I found out that over 63% had a device that could count steps 
     - I found out when asked why over 86% said that it is not very motavating for them 
-
+## target audience
+- My device target audience is people of the older age group like 18 and over but it maybe use they the younger Audience. it is for thos who want to keep a recound on how far and fast they travel.
+  
 ## what-if questions
 - **for my what if qustion** 
     - What if the user wants to incress thier distance traveled?
     - What if the user wants to decress thier time traveled?
 - these qustion will help me carry out my Basic requirements and Advanced requirements 
-
-## target audience
-- My device target audience is people of the older age group like 18 and over but it maybe use they the younger Audience. it is for thos who want to keep a recound on how far and fast they travel.
 
 ## main objectives
 - i need to find a way to get peoples steps 
@@ -87,16 +86,20 @@
     - i improved the visual presentation of graphs and performed unit testing on the programs to ensures the project's quality and reliability. This step involved adjusting layout and formatting and systematically testing software to identify and resolve bugs or errors.
 
 - **week 11:**
-    - i implemented a user feedback system for wellbeing assessment and establishing age ranges for feedback . This involved understanding user needs and preferences,  and incorporating mechanisms for user feedback.
+    - i implemented a user feedback system for wellbeing assessment and establishing age ranges for feedback. This involved understanding user needs and preferences,  and incorporating mechanisms for user feedback.
     
 - **week 12:**
-    - Recording and editing a video presentation to fit within a five-minute timeframe requires effective communication skills and multimedia editing expertise. This involves scripting content, recording video footage, editing footage for clarity and conciseness, and ensuring that the final presentation effectively conveys the project's key highlights.
-    - Compiling the project write-up into HTML format for presentation involves organizing project documentation in a structured and visually appealing manner. This includes formatting text, incorporating multimedia elements, and creating navigational aids to facilitate easy access to project information.
+    - i recorded and editing a video presentation to fit within a five-minute timeframe. This involved scripting content, recording video footage, editing footage.
+    - i compiled the project write-up into HTML format for presentation. This involved organizing project documentation in a structured and visually appealing manner formatting text and creating navigational aids to facilitate easy access to project information.
   
 ## unit testing
+- i put all my programes that needed number vaules under a function test and tryed to find and see if any vaules caused any prolbems and found all my program was running fine
 ## problem encountered 
+- the aim problem i found my self was the put the vaules into a average formate and then display the vaules to the user
+- another problem was trying to find the best way to give feed back to the user given the data.  
 
 ## important piece of code
+
 
 # evaluation 
 - i would say that te project i did could have been a lot better i dound have put all the graphs into 
